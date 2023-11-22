@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { gsap } from "gsap";
+import { Menu } from "../../components/menu/Menu";
 //import { useLoaderData } from "react-router-dom";
 import OpenAI from "openai";
 import Input from "../../components/Input";
@@ -269,6 +270,7 @@ export default function Game({ promptArray }) {
   return (
     <>
       <section id="section-1" className="game__main">
+        <Menu />
         <img
           className="game__bg"
           src={data[background1Image].bg}
