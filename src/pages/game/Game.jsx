@@ -6,6 +6,7 @@ import Input from "../../components/Input";
 import Prompt from "../../components/Prompt";
 import data from "./background.json";
 import "./Game.css";
+import LoaderOne from "../../components/LoaderOne";
 
 export default function Game({ promptArray }) {
   const [isDisable, setIsDisable] = useState(false);
@@ -281,7 +282,9 @@ export default function Game({ promptArray }) {
           pTwo === "waiting" ||
           pThree === "waiting" ||
           pFour === "waiting" ? (
-            <h2>Loading</h2>
+            <div id="loader">
+              <LoaderOne />
+            </div>
           ) : null}
         </div>
         {/*<div className="container__button">
