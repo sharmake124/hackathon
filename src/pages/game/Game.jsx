@@ -8,6 +8,7 @@ import data from "./background.json";
 import "./Game.css";
 import LoaderOne from "../../components/LoaderOne";
 import { PromptContext } from "../../PromptContext";
+import Dice from "../../components/Dice";
 
 export default function Game({ promptArray }) {
   const [isDisable, setIsDisable] = useState(false);
@@ -154,7 +155,7 @@ export default function Game({ promptArray }) {
   }
 
   const openai = new OpenAI({
-    apiKey: "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",
+    apiKey: "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",
     dangerouslyAllowBrowser: true,
   });
 
@@ -300,6 +301,7 @@ export default function Game({ promptArray }) {
   </button>
         </div>*/}
         <div className="container__input">
+          <Dice />
           {inputOne === true ? (
             <Input
               handle={handleInputOne}

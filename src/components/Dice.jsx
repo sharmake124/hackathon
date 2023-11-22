@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Dice.css";
+import "./styles/Dice.css";
 
 function Dice() {
   const [diceOne, setDiceOne] = useState();
