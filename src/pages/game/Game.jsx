@@ -1,12 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { gsap } from "gsap";
-import { useLoaderData } from "react-router-dom";
+//import { useLoaderData } from "react-router-dom";
 import OpenAI from "openai";
 import Input from "../../components/Input";
 import Prompt from "../../components/Prompt";
 import data from "./background.json";
 import "./Game.css";
 import LoaderOne from "../../components/LoaderOne";
+import { PromptContext } from "../../PromptContext";
 
 export default function Game({ promptArray }) {
   const [isDisable, setIsDisable] = useState(false);
@@ -28,7 +29,9 @@ export default function Game({ promptArray }) {
 
   let arrayHistory = [];
 
-  let AIdata = useLoaderData();
+  let AIdata = useContext(PromptContext);
+
+  console.log(AIdata);
 
   AIdata.forEach((element) => {
     if (element.length > 10) {

@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
 import Game from "./pages/game/Game.jsx";
 import React from "react";
+import { PromptContext } from "./PromptContext.jsx";
 
 const openai = new OpenAI({
   apiKey: "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",
@@ -34,8 +35,12 @@ async function main() {
 
   promptArray.pop();
 
+  console.log(array);
+
   return array;
 }
+
+const value = await main();
 
 const router = createBrowserRouter([
   {
@@ -44,10 +49,14 @@ const router = createBrowserRouter([
   },
   {
     path: "/game",
-    element: <Game promptArray={promptArray} />,
-    loader: async () => {
+    element: (
+      <PromptContext.Provider value={value}>
+        <Game promptArray={promptArray} />,
+      </PromptContext.Provider>
+    ),
+    /*loader: async () => {
       return main();
-    },
+    },*/
   },
 ]);
 

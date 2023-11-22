@@ -44,4 +44,6 @@
 
 #loader {
   zoom: 0.5;
+  position: fixed;
+  top: 10vh;
 }
