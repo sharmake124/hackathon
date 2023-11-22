@@ -22,11 +22,6 @@ export default function HomePage() {
       display: "none",
     });
 
-    /*  gsap.to(".site-content", {
-      delay: 5,
-      zIndex: 2,
-    }); */
-
     gsap.to(".loader-text", {
       duration: 1.5,
       delay: 1,
@@ -78,7 +73,7 @@ export default function HomePage() {
     <div className="container">
       <div className="play">
         <button type="button" onClick={handleOpening} className="play">
-          Enter the game
+          Clique vite!
         </button>
       </div>
       <div className="pre-loader block">
@@ -102,7 +97,6 @@ export default function HomePage() {
         </div>
 
         <div className="game__section">
-          {/*  <img src="./src/assets/christmas-landscape13.png" alt="" /> */}
           <div className="game__start">
             <Start />
           </div>

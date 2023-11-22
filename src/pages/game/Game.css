@@ -1,4 +1,4 @@
-.game__section {
+.game__main {
   width: 100vw;
   height: 100vh;
 }
@@ -32,6 +32,19 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+}
+
+.container__button button {
+  cursor: pointer;
+  padding: 1em;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  border-bottom: 9px solid grey;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.container__button button:active {
+  border-bottom: 3px solid grey;
 }
 
 .container__input {

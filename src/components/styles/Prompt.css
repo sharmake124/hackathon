@@ -2,4 +2,9 @@
   background-color: #fafafb;
   width: 60vw;
   height: 30vh;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  padding: 1.5em 3em;
+  font-size: 2rem;
+  overflow-y: scroll;
 }

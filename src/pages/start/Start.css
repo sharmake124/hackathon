@@ -1,11 +1,21 @@
-
 .container__start {
-    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    width: 40vw;
+    color: #CF982A;
+    font-size:larger;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
 }
 
+h1 {
+    margin-bottom: 7vh;
+}
 
-.container__start h1, .container__start p{
-    margin: 1rem;
+.container__start {
+    background-color: #15454A;
+    padding: 10px;
 }

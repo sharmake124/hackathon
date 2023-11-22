@@ -267,7 +267,7 @@ export default function Game({ promptArray }) {
 
   return (
     <>
-      <section id="section-1" className="game__section">
+      <section id="section-1" className="game__main">
         <img
           className="game__bg"
           src={data[background1Image].bg}
@@ -293,7 +293,6 @@ export default function Game({ promptArray }) {
         {/*<div className="container__button">
           <button
             type="button"
-            className="inputbutton"
             onClick={handleResponse}
             disabled={isDisable}
           >
