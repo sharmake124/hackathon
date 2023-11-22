@@ -1,15 +1,49 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { gsap } from "gsap";
+import { useLoaderData } from "react-router-dom";
+import OpenAI from "openai";
 import Input from "../../components/Input";
 import Prompt from "../../components/Prompt";
 import data from "./background.json";
 import "./Game.css";
 
-export default function Game() {
+export default function Game({ promptArray }) {
   const [isDisable, setIsDisable] = useState(false);
   const [background, setBackground] = useState(true);
   const [background1Image, setBackground1Image] = useState(0);
   const [background2Image, setBackground2Image] = useState(1);
+  const [pOne, setPOne] = useState("waiting");
+  const [inputOne, setInputOne] = useState(false);
+  const [inputOneValue, setInputOneValue] = useState("");
+  const [pTwo, setPTwo] = useState("");
+  const [inputTwo, setInputTwo] = useState(false);
+  const [inputTwoValue, setInputTwoValue] = useState("");
+  const [pThree, setPThree] = useState("");
+  const [inputThree, setInputThree] = useState(false);
+  const [inputThreeValue, setInputThreeValue] = useState("");
+  const [pFour, setPFour] = useState("");
+  const [inputFour, setInputFour] = useState(false);
+  const [inputFourValue, setInputFourValue] = useState("");
+
+  let arrayHistory = [];
+
+  let AIdata = useLoaderData();
+
+  AIdata.forEach((element) => {
+    if (element.length > 10) {
+      arrayHistory.push(element);
+    }
+  });
+
+  useEffect(() => {
+    if (pOne === "waiting") {
+      promptArray.push({
+        role: "system",
+        content: `racconte entre 80 et 100 mots l'histoire correspondante : ${arrayHistory[0]}. Demande à l'utilisateur ce qu'il ferait.`,
+      });
+      stepOne(promptArray);
+    }
+  }, []);
 
   function handleResponse() {
     setIsDisable(true);
@@ -115,6 +149,118 @@ export default function Game() {
     }, "2500");
   }
 
+  const openai = new OpenAI({
+    apiKey: "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",
+    dangerouslyAllowBrowser: true,
+  });
+
+  async function stepOne(promptArray) {
+    console.log(promptArray);
+    const completion = await openai.chat.completions.create({
+      messages: promptArray,
+      model: "gpt-3.5-turbo",
+    });
+    promptArray.push({
+      role: "assistant",
+      content: completion.choices[0].message.content,
+    });
+    setPOne(completion.choices[0].message.content);
+    setInputOne(true);
+  }
+
+  function handleInputOne(text) {
+    promptArray.push(
+      {
+        role: "system",
+        content: `En te basant sur la prochaine réponse de l'utilisateur, continue l'histoire par la partie suivante : ${arrayHistory[1]}.`,
+      },
+      {
+        role: "user",
+        content: text,
+      }
+    );
+    setInputOne(false);
+    setPTwo("waiting");
+    handleResponse();
+    stepTwo(promptArray);
+  }
+
+  async function stepTwo(promptArray) {
+    console.log(promptArray);
+    const completion = await openai.chat.completions.create({
+      messages: promptArray,
+      model: "gpt-3.5-turbo",
+    });
+    promptArray.push({
+      role: "assistant",
+      content: completion.choices[0].message.content,
+    });
+    setPTwo(completion.choices[0].message.content);
+    setInputTwo(true);
+  }
+
+  function handleInputTwo(text) {
+    promptArray.push(
+      {
+        role: "system",
+        content: `En te basant sur la prochaine réponse de l'utilisateur, continue l'histoire par la partie suivante : ${arrayHistory[2]}.`,
+      },
+      {
+        role: "user",
+        content: text,
+      }
+    );
+    setInputTwo(false);
+    setPThree("waiting");
+    handleResponse();
+    stepThree(promptArray);
+  }
+
+  async function stepThree(promptArray) {
+    console.log(promptArray);
+    const completion = await openai.chat.completions.create({
+      messages: promptArray,
+      model: "gpt-3.5-turbo",
+    });
+    promptArray.push({
+      role: "assistant",
+      content: completion.choices[0].message.content,
+    });
+    setPThree(completion.choices[0].message.content);
+    setInputThree(true);
+  }
+
+  function handleInputThree(text) {
+    promptArray.push(
+      {
+        role: "system",
+        content: `En te basant sur la prochaine réponse de l'utilisateur, continue l'histoire par la partie suivante : ${arrayHistory[3]}.`,
+      },
+      {
+        role: "user",
+        content: text,
+      }
+    );
+    setInputThree(false);
+    setPFour("waiting");
+    handleResponse();
+    stepFour(promptArray);
+  }
+
+  async function stepFour(promptArray) {
+    console.log(promptArray);
+    const completion = await openai.chat.completions.create({
+      messages: promptArray,
+      model: "gpt-3.5-turbo",
+    });
+    promptArray.push({
+      role: "assistant",
+      content: completion.choices[0].message.content,
+    });
+    setPFour(completion.choices[0].message.content);
+    setInputFour(true);
+  }
+
   return (
     <>
       <section id="section-1" className="game__section">
@@ -125,9 +271,20 @@ export default function Game() {
           style={{ zIndex: background ? "1" : "0" }}
         />
         <div className="container__prompt">
-          <Prompt />
+          {pOne !== "waiting" &&
+          pTwo === "" &&
+          pThree === "" &&
+          pFour === "" ? (
+            <Prompt text={pOne} />
+          ) : null}
+          {pOne === "waiting" ||
+          pTwo === "waiting" ||
+          pThree === "waiting" ||
+          pFour === "waiting" ? (
+            <h2>Loading</h2>
+          ) : null}
         </div>
-        <div className="container__button">
+        {/*<div className="container__button">
           <button
             type="button"
             className="inputbutton"
@@ -135,10 +292,50 @@ export default function Game() {
             disabled={isDisable}
           >
             Confirm you choice
-          </button>
+  </button>
+        </div>*/}
+        <div className="container__input">
+          {inputOne === true ? (
+            <Input
+              handle={handleInputOne}
+              input={inputOneValue}
+              setInput={setInputOneValue}
+            />
+          ) : null}
+        </div>
+
+        <div className="container__prompt">
+          {pTwo !== "waiting" && pThree === "" && pFour === "" ? (
+            <Prompt text={pTwo} />
+          ) : null}
         </div>
         <div className="container__input">
-          <Input />
+          {inputTwo === true ? (
+            <Input
+              handle={handleInputTwo}
+              input={inputTwoValue}
+              setInput={setInputTwoValue}
+            />
+          ) : null}
+        </div>
+
+        <div className="container__prompt">
+          {pThree !== "waiting" && pFour === "" ? (
+            <Prompt text={pThree} />
+          ) : null}
+        </div>
+        <div className="container__input">
+          {inputThree === true ? (
+            <Input
+              handle={handleInputThree}
+              input={inputThreeValue}
+              setInput={setInputThreeValue}
+            />
+          ) : null}
+        </div>
+
+        <div className="container__prompt">
+          {pFour !== "waiting" ? <Prompt text={pFour} /> : null}
         </div>
         <img
           className="game__bg2"
