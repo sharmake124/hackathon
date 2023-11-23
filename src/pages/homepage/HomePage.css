@@ -106,18 +106,19 @@
 
 .play {
   position: absolute;
+  border-radius: 100%;
+  width: 200px;
+  aspect-ratio: 1;
   cursor: pointer;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100px;
-  aspect-ratio: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 100%;
+  border: none;
   color: #232323;
+  font-size: 2rem;
   z-index: 2;
 }
 

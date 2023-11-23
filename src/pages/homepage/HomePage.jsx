@@ -5,6 +5,7 @@ import "./HomePage.css";
 import StartButton from "../start/button/StartButton";
 
 export default function HomePage() {
+  
   function handleOpening() {
     gsap.to(".clipper-left", {
       duration: 2,
@@ -21,11 +22,6 @@ export default function HomePage() {
       ease: "power4.inOut",
       display: "none",
     });
-
-    /*  gsap.to(".site-content", {
-      delay: 5,
-      zIndex: 2,
-    }); */
 
     gsap.to(".loader-text", {
       duration: 1.5,
@@ -102,7 +98,6 @@ export default function HomePage() {
         </div>
 
         <div className="game__section">
-          {/*  <img src="./src/assets/christmas-landscape13.png" alt="" /> */}
           <div className="game__start">
             <Start />
           </div>
