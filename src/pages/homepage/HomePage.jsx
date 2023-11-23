@@ -1,5 +1,6 @@
 import { gsap } from "gsap";
 import Start from "../start/Start";
+import { Link } from "react-router-dom";
 import "./HomePage.css";
 import StartButton from "../start/button/StartButton";
 
@@ -92,7 +93,6 @@ export default function HomePage() {
         <div className="loader-text">du Père Noël</div>
       </div>
 
-
       <div className="site-content">
         <div className="site-nav">
           <div className="site-logo">
@@ -107,12 +107,12 @@ export default function HomePage() {
             <Start />
           </div>
           <div className="game__button">
-            <StartButton />
+            <Link to={"/game"}>
+              <StartButton />
+            </Link>
           </div>
         </div>
-        
       </div>
-      
     </div>
   );
 }
