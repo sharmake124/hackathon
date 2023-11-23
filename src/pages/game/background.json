@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "bg": "./src/assets/christmas-landscape1.png"
+  },
+  {
+    "id": 2,
+    "bg": "./src/assets/christmas-landscape2.png"
+  },
+  {
+    "id": 3,
+    "bg": "./src/assets/christmas-landscape3.png"
+  },
+  {
+    "id": 4,
+    "bg": "./src/assets/christmas-landscape4.png"
+  },
+  {
+    "id": 5,
+    "bg": "./src/assets/christmas-landscape5.png"
+  },
+  {
+    "id": 6,
+    "bg": "./src/assets/christmas-landscape6.png"
+  },
+  {
+    "id": 7,
+    "bg": "./src/assets/christmas-landscape7.png"
+  },
+  {
+    "id": 8,
+    "bg": "./src/assets/christmas-landscape8.png"
+  },
+  {
+    "id": 9,
+    "bg": "./src/assets/christmas-landscape9.png"
+  },
+  {
+    "id": 10,
+    "bg": "./src/assets/christmas-landscape10.png"
+  },
+  {
+    "id": 11,
+    "bg": "./src/assets/christmas-landscape11.png"
+  },
+  {
+    "id": 12,
+    "bg": "./src/assets/christmas-landscape12.png"
+  },
+  {
+    "id": 13,
+    "bg": "./src/assets/christmas-landscape13.png"
+  },
+  {
+    "id": 14,
+    "bg": "./src/assets/christmas-landscape14.png"
+  },
+  {
+    "id": 15,
+    "bg": "./src/assets/christmas-landscape15.png"
+  }
+]

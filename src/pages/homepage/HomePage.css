@@ -1,0 +1,161 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.clipper-left {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 50vw;
+  background-color: #fafafb;
+  overflow: clip;
+  clip-path: inset(0 0 0 0);
+  display: flex;
+  justify-content: flex-end;
+  z-index: -1;
+}
+
+.loader-text {
+  width: max-content;
+  font-size: 2rem;
+  height: 100%;
+  padding: 4em;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  text-align: center;
+}
+
+.clipper-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 50vw;
+  background-color: #fafafb;
+  overflow: clip;
+  clip-path: inset(0 0 0 0);
+  display: flex;
+  justify-content: flex-start;
+  z-index: -1;
+}
+
+.site-content {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.site-nav {
+  position: absolute;
+  backdrop-filter: blur(5px);
+  padding: 4em;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.site-content a,
+.menu-toggle {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.site-content img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.pre-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100000;
+  background-color: transparent;
+}
+
+.loader-wrapper {
+  position: relative;
+  width: 3px;
+  height: 140px;
+  background-color: transparent;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.loader {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: #232323;
+}
+
+.play {
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
+  color: #232323;
+}
+
+.game__section {
+  width: 100vw;
+  height: 100vh;
+}
+
+.game__start {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fafafb;
+}
+
+@media (max-width: 900px) {
+  .sidebar-nav {
+    display: none;
+  }
+
+  .site-content {
+    width: 100vw;
+    left: 0;
+  }
+
+  .clipper-left {
+    left: 0;
+    width: 50vw;
+  }
+}
+
+@media (max-width: 500px) {
+  .clipper-left .loader-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -75%);
+  }
+
+  .clipper-right .loader-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+  }
+}
