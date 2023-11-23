@@ -22,10 +22,10 @@ export default function HomePage() {
       display: "none",
     });
 
-    gsap.to(".site-content", {
+    /*  gsap.to(".site-content", {
       delay: 5,
       zIndex: 2,
-    });
+    }); */
 
     gsap.to(".loader-text", {
       duration: 1.5,
@@ -95,14 +95,14 @@ export default function HomePage() {
 
       <div className="site-content">
         <div className="site-nav">
-          <div className="site-logo">
+          <div className="menu-toggle">
             <a href="#">Santa Claus</a>
+            <a href="#">Menu</a>
           </div>
-          <div className="menu-toggle">Menu</div>
         </div>
 
         <div className="game__section">
-          <img src="./src/assets/christmas-landscape13.png" alt="" />
+          {/*  <img src="./src/assets/christmas-landscape13.png" alt="" /> */}
           <div className="game__start">
             <Start />
           </div>
