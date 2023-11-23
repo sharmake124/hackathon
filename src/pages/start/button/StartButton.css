@@ -1,0 +1,25 @@
+.buttonStart {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100px;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.buttonStart::before {
+    content: "";
+    position: absolute;
+    background-color: red;
+    border-radius: 100%;
+    z-index: -1;
+    inset: 0;
+}
+
+.buttonStart svg {
+    width: 2.5rem;
+    aspect-ratio: 1;
+    fill: white;
+}

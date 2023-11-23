@@ -1,12 +1,11 @@
-.container__start {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 40vw;
-}
 
 .container__start {
-    background-color: #232323;
-}   
+    width: 50vw;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.container__start h1, .container__start p{
+    margin: 1rem;
+}
