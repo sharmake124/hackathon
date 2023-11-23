@@ -62,7 +62,7 @@
 .site-content a,
 .menu-toggle {
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 3vw, 5rem);
   color: white;
 }
 
@@ -120,12 +120,25 @@
 }
 
 .game__start {
-  opacity: 0;
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  opacity: 0;
   color: #fafafb;
+}
+
+.game__button {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @media (max-width: 900px) {
@@ -150,6 +163,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -75%);
+    font-size: 1.5rem;
   }
 
   .clipper-right .loader-text {
@@ -157,5 +171,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -25%);
+
+    font-size: 1.5rem;
   }
 }

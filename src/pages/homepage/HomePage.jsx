@@ -1,6 +1,7 @@
 import { gsap } from "gsap";
 import Start from "../start/Start";
 import "./HomePage.css";
+import StartButton from "../start/button/StartButton";
 
 export default function HomePage() {
   function handleOpening() {
@@ -9,6 +10,7 @@ export default function HomePage() {
       delay: 3,
       clipPath: "inset(0 100% 0 0)",
       ease: "power4.inOut",
+      display: "none",
     });
 
     gsap.to(".clipper-right", {
@@ -16,6 +18,12 @@ export default function HomePage() {
       delay: 3,
       clipPath: "inset(0 0 0 100%)",
       ease: "power4.inOut",
+      display: "none",
+    });
+
+    gsap.to(".site-content", {
+      delay: 5,
+      zIndex: 2,
     });
 
     gsap.to(".loader-text", {
@@ -53,10 +61,11 @@ export default function HomePage() {
       duration: 2,
       scale: 0,
       ease: "power4.inOut",
+      display: "none",
     });
 
     setTimeout(() => {
-      gsap.to(".game__start", {
+      gsap.to(".game__start, .game__button", {
         duration: 2,
         opacity: 1,
         ease: "power4.inOut",
@@ -82,6 +91,8 @@ export default function HomePage() {
       <div className="clipper-right">
         <div className="loader-text">du Père Noël</div>
       </div>
+
+
       <div className="site-content">
         <div className="site-nav">
           <div className="site-logo">
@@ -89,13 +100,19 @@ export default function HomePage() {
           </div>
           <div className="menu-toggle">Menu</div>
         </div>
+
         <div className="game__section">
           <img src="./src/assets/christmas-landscape13.png" alt="" />
           <div className="game__start">
             <Start />
           </div>
+          <div className="game__button">
+            <StartButton />
+          </div>
         </div>
+        
       </div>
+      
     </div>
   );
 }
