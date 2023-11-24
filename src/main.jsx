@@ -7,7 +7,7 @@ import React from "react";
 import { PromptContext } from "./PromptContext.jsx";
 
 const openai = new OpenAI({
-  apiKey: "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",
+  apiKey: "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",
   dangerouslyAllowBrowser: true,
 });
 
