@@ -1,6 +1,7 @@
 import { gsap } from "gsap";
 import Start from "../start/Start";
 import "./HomePage.css";
+import Snowfall from "react-snowfall";
 
 export default function HomePage() {
   function handleOpening() {
@@ -68,7 +69,7 @@ export default function HomePage() {
     <div className="container">
       <div className="play">
         <button type="button" onClick={handleOpening} className="play">
-          Enter the game
+          Clique vite!
         </button>
       </div>
       <div className="pre-loader block">
