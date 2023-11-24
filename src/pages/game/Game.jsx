@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { gsap } from "gsap";
+import {Menu} from "../../components/menu/Menu"
 import Input from "../../components/Input";
 import Prompt from "../../components/Prompt";
 import data from "./background.json";
@@ -118,6 +119,7 @@ export default function Game() {
   return (
     <>
       <section id="section-1" className="game__main">
+      <Menu />
         <img
           className="game__bg"
           src={data[background1Image].bg}
