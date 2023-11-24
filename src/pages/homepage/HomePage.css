@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap');
+
 .container {
   width: 100%;
   height: 100vh;
@@ -18,6 +20,7 @@
 }
 
 .loader-text {
+  font-family: 'Mountains of Christmas';
   width: max-content;
   font-size: 2rem;
   height: 100%;
