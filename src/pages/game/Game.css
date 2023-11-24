@@ -34,7 +34,7 @@
   z-index: 1;
 }
 
-.container__button button{
+.container__button button {
   cursor: pointer;
   padding: 1em;
   font-size: 1.5rem;
@@ -43,7 +43,7 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.container__button button:active{
+.container__button button:active {
   border-bottom: 3px solid grey;
 }
 
@@ -55,3 +55,8 @@
   z-index: 1;
 }
 
+#loader {
+  zoom: 0.5;
+  position: fixed;
+  top: 10vh;
+}
