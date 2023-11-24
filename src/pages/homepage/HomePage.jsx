@@ -3,7 +3,6 @@ import Start from "../start/Start";
 import { Link } from "react-router-dom";
 import "./HomePage.css";
 import StartButton from "../start/button/StartButton";
-
 export default function HomePage() {
   
   function handleOpening() {
