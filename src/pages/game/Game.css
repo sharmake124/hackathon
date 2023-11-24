@@ -23,7 +23,7 @@
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;
+  z-index: 2;
 }
 
 .container__button {
@@ -31,10 +31,10 @@
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;
+  z-index: 2;
 }
 
-.container__button button{
+.container__button button {
   cursor: pointer;
   padding: 1em;
   font-size: 1.5rem;
@@ -43,7 +43,7 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.container__button button:active{
+.container__button button:active {
   border-bottom: 3px solid grey;
 }
 
@@ -52,6 +52,5 @@
   top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;
+  z-index: 2;
 }
-

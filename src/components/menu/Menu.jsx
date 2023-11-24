@@ -47,15 +47,17 @@ export const Menu = () => {
 
   return (
     <>
-      <div className={`background ${openClass}`}></div>
-      <button className={`burger ${openClass}`} onClick={toggleMenu}></button>
-      <div className={`menu ${openClass}`}>
-        <Swiper speed={750} modules={[Navigation]} navigation>
-          {navs.map((nav) => (
-            <SwiperSlide>{nav}</SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+      <section className={`sectionMenu ${openClass}`}>
+        <div className={`background ${openClass}`}></div>
+        <button className={`burger ${openClass}`} onClick={toggleMenu}></button>
+        <div className={`menu ${openClass}`}>
+          <Swiper speed={750} modules={[Navigation]} navigation>
+            {navs.map((nav) => (
+              <SwiperSlide>{nav}</SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </section>
     </>
   );
 };
