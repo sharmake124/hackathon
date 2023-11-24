@@ -1,16 +1,12 @@
-import "./styles/Input.css"
+import "./styles/Input.css";
 
-export default function Input() {
+export default function Input({ handle, input, setInput }) {
   return (
     <div className="input">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quia
-        voluptatibus fugit, doloribus enim cum ipsam unde fugiat error
-        exercitationem sed accusantium at qui porro velit modi magni dolorem!
-        Perspiciatis quaerat et modi. Adipisci fuga eius perspiciatis minima
-        suscipit corrupti totam non dolorum voluptate architecto! Iure itaque
-        officiis fugit deserunt?
-      </p>
+      <input value={input} onChange={(e) => setInput(e.target.value)} />
+      <button type="button" onClick={() => handle(input)}>
+        Validez votre réponse
+      </button>
     </div>
   );
 }
