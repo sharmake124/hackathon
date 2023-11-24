@@ -1,19 +1,27 @@
-import "./Start.css"
+import "./Start.css";
 
 export default function Start() {
   return (
-    <>
-      <div className="container__start">
-        <h1>Welcome</h1>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
-          repellat at veniam quas recusandae itaque. Voluptas odit beatae
-          architecto placeat aspernatur similique consequatur dignissimos
-          expedita, optio sit qui quo totam modi sequi, deleniti quia. Assumenda
-          molestiae esse optio, voluptatum ratione debitis voluptatem
-          perferendis laboriosam quaerat aliquid fuga itaque officia quas?
-        </p>
-      </div>
-    </>
+    <div className="container__start">
+      <h1> ON A BESOIN DE TOI ! </h1>
+      <p>Ouf! Heuresement que tu es arrivé!</p> <br />
+      <p>
+        {" "}
+        Nous sommes le 24 décembre, et c'est bientôt l'heure pour le père Noel
+        de partir livrer des cadeaux aux enfants du monde entier.
+      </p>{" "}
+      <br />
+      <p>
+        Mais depuis quelques heures, il ne répond plus au téléphone alors que
+        c'est la nuit. la plus importante de l'année.{" "}
+      </p>{" "}
+      <br />
+      <p>Nous ne savons plus quoi faire pour le contacter...</p>
+      <br />
+      <p>Heureusement que TU es arrivé! </p>
+      <br />
+      <p> Tu vas pouvoir nous aider à sauver Noel!</p>
+      <br />
+    </div>
   );
 }

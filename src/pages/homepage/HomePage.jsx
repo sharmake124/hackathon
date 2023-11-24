@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import "./HomePage.css";
 import StartButton from "../start/button/StartButton";
 export default function HomePage() {
-  
   function handleOpening() {
     gsap.to(".clipper-left", {
       duration: 2,
@@ -73,7 +72,7 @@ export default function HomePage() {
     <div className="container">
       <div className="play">
         <button type="button" onClick={handleOpening} className="play">
-          Enter the game
+          Clique vite!
         </button>
       </div>
       <div className="pre-loader block">
