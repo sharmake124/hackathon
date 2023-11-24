@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap");
 
 .container {
   width: 100%;
@@ -9,6 +9,7 @@
 .clipper-left {
   position: absolute;
   top: 0;
+  left: 0;
   height: 100vh;
   width: 50vw;
   background-color: #fafafb;
@@ -20,7 +21,7 @@
 }
 
 .loader-text {
-  font-family: 'Mountains of Christmas';
+  font-family: "Mountains of Christmas";
   width: max-content;
   font-size: 2rem;
   height: 100%;
@@ -49,6 +50,7 @@
   background-image: url("../../assets/christmas-landscape13.png");
   object-fit: cover;
   height: 100vh;
+  width: 100vw;
   overflow: hidden;
   display: flex;
   flex-direction: column;
