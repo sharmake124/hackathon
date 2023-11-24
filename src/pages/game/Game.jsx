@@ -269,8 +269,8 @@ export default function Game({ promptArray }) {
 
   return (
     <>
-      <section id="section-1" className="game__main">
         <Menu />
+      <section id="section-1" className="game__main">
         <img
           className="game__bg"
           src={data[background1Image].bg}
@@ -293,6 +293,7 @@ export default function Game({ promptArray }) {
             </div>
           ) : null}
         </div>
+
         {/*<div className="container__button">
           <button
             type="button"
