@@ -16,7 +16,7 @@
   clip-path: inset(0 0 0 0);
   display: flex;
   justify-content: flex-end;
-  z-index: -1;
+  z-index: 1;
 }
 
 .loader-text {
@@ -42,31 +42,37 @@
   clip-path: inset(0 0 0 0);
   display: flex;
   justify-content: flex-start;
-  z-index: -1;
+  z-index: 1;
 }
 
 .site-content {
-  position: relative;
-  width: 100vw;
+  background-image: url("../../assets/christmas-landscape13.png");
+  object-fit: cover;
   height: 100vh;
-  z-index: -2;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .site-nav {
-  position: absolute;
   backdrop-filter: blur(5px);
   padding: 4em;
-  display: flex;
   width: 100%;
-  justify-content: space-between;
 }
 
-.site-content a,
 .menu-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-toggle a {
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 3vw, 5rem);
   color: white;
+  cursor: pointer;
 }
 
 .site-content img {
@@ -103,31 +109,38 @@
 
 .play {
   position: absolute;
+  border-radius: 100%;
+  width: 200px;
+  aspect-ratio: 1;
   cursor: pointer;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100px;
-  aspect-ratio: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 100%;
+  border: none;
   color: #232323;
+  font-size: 2rem;
+  z-index: 2;
 }
 
 .game__section {
-  width: 100vw;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 5vw;
 }
 
 .game__start {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   color: #fafafb;
 }
 
@@ -153,6 +166,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -75%);
+    font-size: 1.5rem;
   }
 
   .clipper-right .loader-text {
@@ -160,5 +174,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -25%);
+
+    font-size: 1.5rem;
   }
 }
